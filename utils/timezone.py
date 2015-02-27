@@ -29,7 +29,7 @@ __all__ = [
 
 # UTC and local time zones
 
-ZERO = timedelta(0)
+# ZERO = timedelta(0)
 
 
 class UTC(tzinfo):

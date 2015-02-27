@@ -829,8 +829,8 @@ class Query(object):
                 data = data._replace(lhs_alias=change_map[lhs])
                 self.alias_map[alias] = data
 
-        self.external_aliases = {change_map.get(alias, alias)
-                                 for alias in self.external_aliases}
+        self.external_aliases = set([change_map.get(alias, alias)
+                                 for alias in self.external_aliases])
 
     def bump_prefix(self, outer_query):
         """

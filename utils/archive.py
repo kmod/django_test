@@ -24,7 +24,7 @@ THE SOFTWARE.
 import os
 import shutil
 import tarfile
-import zipfile
+# import zipfile
 
 from django.utils import six
 

@@ -619,7 +619,7 @@ else:
     # Workaround for standalone backslash
     def u(s):
         return unicode(s.replace(r'\\', r'\\\\'), "unicode_escape")
-    unichr = unichr
+    # unichr = unichr
     int2byte = chr
     def byte2int(bs):
         return ord(bs[0])
@@ -672,9 +672,8 @@ else:
         exec("""exec _code_ in _globs_, _locs_""")
 
 
-    exec_("""def reraise(tp, value, tb=None):
-    raise tp, value, tb
-""")
+    def reraise(tp, value, tb=None):
+        raise tp, value, tb
 
 
 if sys.version_info[:2] == (3, 2):
@@ -844,11 +843,4 @@ if PY3:
     memoryview = memoryview
     buffer_types = (bytes, bytearray, memoryview)
 else:
-    # memoryview and buffer are not strictly equivalent, but should be fine for
-    # django core usage (mainly BinaryField). However, Jython doesn't support
-    # buffer (see http://bugs.jython.org/issue1521), so we have to be careful.
-    if sys.platform.startswith('java'):
-        memoryview = memoryview
-    else:
-        memoryview = buffer
-    buffer_types = (bytearray, memoryview)
+    pass
