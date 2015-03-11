@@ -417,7 +417,9 @@ class Field(RegisterLookupMixin):
         # slightly weird copy construct.
         obj = Empty()
         obj.__class__ = self.__class__
-        obj.__dict__ = self.__dict__.copy()
+        for k, v in self.__dict__.items():
+            obj.__dict__[k] = v
+        # obj.__dict__ = self.__dict__.copy()
         return obj
 
     def __reduce__(self):
