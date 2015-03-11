@@ -140,7 +140,10 @@ class ConnectionHandler(object):
         like settings.DATABASES).
         """
         self._databases = databases
-        self._connections = local()
+
+        class PseudoLocal(object):
+            pass
+        self._connections = PseudoLocal()
 
     @cached_property
     def databases(self):
