@@ -160,7 +160,7 @@ class BaseDatabaseWrapper(object):
         """
         Creates a cursor, opening a connection if necessary.
         """
-        self.validate_thread_sharing()
+        # self.validate_thread_sharing()
         if self.queries_logged:
             cursor = self.make_debug_cursor(self._cursor())
         else:
