@@ -25,6 +25,8 @@ from django.utils import six, lru_cache
 from django.utils.translation import get_language
 
 
+class local(object):
+    pass
 # SCRIPT_NAME prefixes for each thread are stored here. If there's no entry for
 # the current thread (which is the only one we ever access), it is assumed to
 # be empty.
