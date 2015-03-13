@@ -126,7 +126,7 @@ class Command(BaseCommand):
         # django.core.management.base forces the locale to en-us. We should
         # set it up correctly for the first request (particularly important
         # in the "--noreload" case).
-        translation.activate(settings.LANGUAGE_CODE)
+        # translation.activate(settings.LANGUAGE_CODE)
 
         try:
             handler = self.get_handler(*args, **options)
