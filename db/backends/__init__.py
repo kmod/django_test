@@ -500,6 +500,7 @@ class BaseDatabaseWrapper(object):
     ##### Thread safety handling #####
 
     def validate_thread_sharing(self):
+        return
         """
         Validates that the connection isn't accessed by another thread than the
         one which originally created it, unless the connection was explicitly
