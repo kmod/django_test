@@ -8,7 +8,7 @@ import importlib
 
 from django.dispatch import receiver
 from django.conf import settings
-# from django.test.signals import setting_changed
+from django.test.signals import setting_changed
 from django.utils.encoding import force_bytes, force_str, force_text
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.crypto import (
@@ -23,7 +23,7 @@ HASHERS = None  # lazily loaded from PASSWORD_HASHERS
 PREFERRED_HASHER = None  # defaults to first item in PASSWORD_HASHERS
 
 
-# @receiver(setting_changed)
+@receiver(setting_changed)
 def reset_hashers(**kwargs):
     if kwargs['setting'] == 'PASSWORD_HASHERS':
         global HASHERS, PREFERRED_HASHER

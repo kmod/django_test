@@ -313,7 +313,6 @@ class BaseCommand(object):
             from django.conf import settings  # NOQA
 
         saved_locale = None
-        self.leave_locale_alone = True
         if not self.leave_locale_alone:
             # Only mess with locales if we can assume we have a working
             # settings file, because django.utils.translation requires settings

@@ -8,7 +8,7 @@ from django.db.utils import load_backend
 from django.utils.deprecation import RemovedInDjango18Warning
 from django.utils.encoding import force_bytes
 from django.utils.functional import cached_property
-# from django.utils.six.moves import input
+from django.utils.six.moves import input
 from django.utils.six import StringIO
 from django.core.management.commands.dumpdata import sort_dependencies
 from django.db import router

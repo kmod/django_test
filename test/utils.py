@@ -3,7 +3,7 @@ import logging
 import re
 import sys
 import time
-# from unittest import skipUnless # needs cmp()
+from unittest import skipUnless
 import warnings
 from functools import wraps
 from xml.dom.minidom import parseString, Node

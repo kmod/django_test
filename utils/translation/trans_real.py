@@ -12,7 +12,7 @@ import warnings
 from django.apps import apps
 from django.core.exceptions import AppRegistryNotReady
 from django.dispatch import receiver
-# from django.test.signals import setting_changed
+from django.test.signals import setting_changed
 from django.utils.deprecation import RemovedInDjango19Warning
 from django.utils.encoding import force_str, force_text
 from django.utils._os import upath
@@ -58,7 +58,7 @@ _BROWSERS_DEPRECATED_LOCALES = {
 _DJANGO_DEPRECATED_LOCALES = _BROWSERS_DEPRECATED_LOCALES
 
 
-# @receiver(setting_changed)
+@receiver(setting_changed)
 def reset_cache(**kwargs):
     """
     Reset global state when LANGUAGES setting has been changed, as some

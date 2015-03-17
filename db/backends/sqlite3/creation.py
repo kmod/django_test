@@ -2,7 +2,7 @@ import os
 import sys
 
 from django.db.backends.creation import BaseDatabaseCreation
-# from django.utils.six.moves import input
+from django.utils.six.moves import input
 
 
 class DatabaseCreation(BaseDatabaseCreation):

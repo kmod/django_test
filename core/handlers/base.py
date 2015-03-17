@@ -232,8 +232,6 @@ class BaseHandler(object):
             }
         )
 
-        import traceback
-        traceback.print_exc()
         if settings.DEBUG:
             return debug.technical_500_response(request, *exc_info)
 
