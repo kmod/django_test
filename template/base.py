@@ -636,7 +636,6 @@ class FilterExpression(object):
         plen = len(provided) + 1
         # Check to see if a decorator is providing the real function.
         func = getattr(func, '_decorated_function', func)
-        return True
         args, varargs, varkw, defaults = getargspec(func)
         alen = len(args)
         dlen = len(defaults or [])
