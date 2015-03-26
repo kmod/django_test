@@ -443,6 +443,20 @@ class ExceptionReporter(object):
     def get_traceback_frames(self):
         frames = []
         tb = self.tb
+        for (filename, name, lineno) in tb.getLines():
+            print filename, name, lineno
+            pre_context_lineno, pre_context, context_line, post_context = self._get_lines_from_file(filename, lineno-1, 7)
+            frames.append({
+                'filename': filename,
+                'function': name,
+                'lineno': lineno,
+                'pre_context': pre_context,
+                'context_line': context_line,
+                'post_context': post_context,
+                'pre_context_lineno': pre_context_lineno + 1,
+                })
+        frames.reverse()
+        return frames
         while tb is not None:
             # Support for __traceback_hide__ which is used by a few libraries
             # to hide internal frames.
